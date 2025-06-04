@@ -22,7 +22,7 @@ public class XyzUserCreationPage : XyzBasePom
      string email = $"testEmail{new Random().Next(100, 999)}@gmail.com";
      string password = "Test123@";
 
-    //Metoda koja unosi podatke korisnika i kreira nalog
+    //Metoda koja unosi podatke korisnika i kreira nalog:
     public XyzLoginPage InsertUserDetails()
     {
         driver.FindElement(firstNameInput).SendKeys(firstName);
