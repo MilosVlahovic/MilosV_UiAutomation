@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace MilosV_UiAutomation.Tests
+namespace MilosV_UiAutomation.TestInfrastructure
 {
     public class TestSetup
     {

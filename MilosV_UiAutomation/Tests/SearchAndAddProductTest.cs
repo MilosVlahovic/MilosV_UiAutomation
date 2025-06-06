@@ -1,14 +1,15 @@
 ﻿using NUnit.Framework;
 using MilosV_UiAutomation.Pages;
+using MilosV_UiAutomation.TestInfrastructure;
 
 namespace MilosV_UiAutomation.Tests
 {
-    public class AddingProductTest : TestSetup
+    public class SearchAndAddProductTest : TestSetup
     {
         private XyzLandingPage landingPage;
 
         [Test]
-        public void TestAddingProduct()
+        public void SearchAndAddProduct()
         { 
             landingPage = new XyzLandingPage(driver);
             landingPage.NavigateToHomePage();
@@ -18,8 +19,8 @@ namespace MilosV_UiAutomation.Tests
             XyzSearchResultPage searchResult = homePage.SearchForProduct("Boss");
             searchResult.SortingProducts("Noviteti");
             XyzProductOverviewPage productOverview = searchResult.SelectProduct();
-            String productTitle = productOverview.GetProductTitle();
-            Assert.That(productTitle, Is.EqualTo("BOSS - Crni muški kačket"), "Product title is wrong!");
+            String productTitle = productOverview.GetProductTitle("BOSS - Crni muški kačket");
+            Assert.That(productOverview.GetProductTitle("BOSS - Crni muški kačket"), Is.EqualTo("BOSS - Crni muški kačket"));
             String productPrice = productOverview.GetProductPrice();
             Assert.That(productPrice, Is.EqualTo("6.990,00 RSD"), "Product price is wrong!");
             productOverview.AddToCart();

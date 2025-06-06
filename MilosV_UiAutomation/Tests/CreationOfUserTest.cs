@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using MilosV_UiAutomation.Pages;
+using MilosV_UiAutomation.TestInfrastructure;
 
 namespace MilosV_UiAutomation.Tests
 {
@@ -10,7 +11,7 @@ namespace MilosV_UiAutomation.Tests
         [Test]
         public void TestCreateNewUser()
         {
-            //Kreiranje novog korisnika, login
+            //Kreiranje novog korisnika i login.
             landingPage = new XyzLandingPage(driver);
             landingPage.NavigateToHomePage();
             landingPage.RejectCookiePopup();

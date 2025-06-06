@@ -12,7 +12,7 @@ public class XyzSearchResultPage : XyzBasePom
     //Lokatori za elemente na stranici:
     By productItem = By.XPath("//a[contains(normalize-space(text()), 'Crni muški kačket')]");
     By sortingDdm = By.CssSelector("#catalog-sorter");
-
+    
     //Metoda za sortiranje search rezultata.
     public void SortingProducts(string option)
     {
@@ -31,6 +31,6 @@ public class XyzSearchResultPage : XyzBasePom
         return new XyzProductOverviewPage(driver); 
     }
 
-
+    
 
 }
